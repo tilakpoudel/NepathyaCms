@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/submenus/create',[
+    'uses'=>'SubMenuController@create',
+    'as'=>'submenus.create'
+]);

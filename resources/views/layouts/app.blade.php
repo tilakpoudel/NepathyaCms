@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                       
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -72,9 +72,47 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <ul class="list-group">  
+                        <li class="list-group-item">
+                        <a href="#">DashBoard </a>
+                        </li>
+
+                        <li class="list-group-item">
+                            <strong><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menus</a>
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{route('submenus.create')}}">Create</a>
+                              <a class="dropdown-item" href="#two">View</a>
+                              <div role="separator" class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#three">....</a>
+                            </div>
+                            </strong>
+                          </li>
+
+                        <li class="list-group-item">
+                            <strong><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">SubMenus</a>
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{route('submenus.create')}}">Create</a>
+                              <a class="dropdown-item" href="#two">View</a>
+                              <div role="separator" class="dropdown-divider"></div>
+                              <a class="dropdown-item" href="#three">....</a>
+                            </div>
+                            </strong>
+                          </li>
+                    </ul>
+                </div>
+                <div class="col-lg-9">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
+
+
+        {{-- <main class="py-4">
             @yield('content')
-        </main>
+        </main> --}}
     </div>
 </body>
 </html>
