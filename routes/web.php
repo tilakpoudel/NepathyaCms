@@ -17,9 +17,26 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/submenus/create',[
-    'uses'=>'SubMenuController@create',
-    'as'=>'submenus.create'
-]);
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+
+    Route::get('/home', [
+        'uses'=>'HomeController@index',
+        'as'=>'home'
+    ]);
+
+
+    Route::get('/submenus/create',[
+        'uses'=>'SubMenuController@create',
+        'as'=>'submenus.create'
+    ]);
+    Route::get('/mainmenus/create',[
+        'uses'=>'MainMenuController@create',
+        'as'=>'mainmenu.create'
+    ]);
+    Route::post('/mainmenu/store',[
+        'uses'=>'MainMenuController@store',
+        'as'=>'mainmenu.store'
+    ]);
+});
+
