@@ -5,11 +5,11 @@
     @include('admin.includes.errors')
   <div class="panel panel-default">
         <div class="panel-heading">
-          <h3>Create a new Sub Menu </h3>
+          <h3>Edit Sub Menu :{{$submenu->name}}</h3>
         </div>
     
         <div class="panel-body">
-        <form action="{{route('submenu.store')}}" method="post">
+        <form action="{{route('submenu.update',['id'=>$submenu->id])}}" method="post">
             {{csrf_field()}}
     
             <div class="form-group">
@@ -25,7 +25,7 @@
 
             <div class="form-group">
               <strong><label for="sub_menu_name">Sub Menu Name</label></strong>
-              <input type="text" name="sub_menu_name" id="submenu" required class="form-control">
+            <input type="text" name="sub_menu_name" id="submenu" value={{$submenu->name}} required class="form-control">
             </div>
     
             <div class="form-group">
@@ -46,7 +46,7 @@
                 
             <div class="form-group">
               <div>
-                <button type="submit" name="submit_menu" class="btn btn-success btn-lg">Create SubMenu</button>
+                <button type="submit" name="submit_menu" class="btn btn-success btn-lg">Update SubMenu</button>
               </div>
             </div>
     

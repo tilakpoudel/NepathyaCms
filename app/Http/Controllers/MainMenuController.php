@@ -54,7 +54,7 @@ class MainMenuController extends Controller
         Session::flash('success','You have successfully created Main Menus');
 
         return redirect()->route('mainmenu.view');
-        return redirect()->back();
+        // return redirect()->back();
     }
 
     /**

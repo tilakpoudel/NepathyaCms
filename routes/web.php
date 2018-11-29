@@ -25,12 +25,7 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
         'as'=>'home'
     ]);
 
-
-    Route::get('/submenus/create',[
-        'uses'=>'SubMenuController@create',
-        'as'=>'submenus.create'
-    ]);
-    Route::get('/mainmenus/create',[
+    Route::get('/mainmenu/create',[
         'uses'=>'MainMenuController@create',
         'as'=>'mainmenu.create'
     ]);
@@ -38,17 +33,37 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
         'uses'=>'MainMenuController@store',
         'as'=>'mainmenu.store'
     ]);
-    Route::get('/mainmenus/view',[
+    Route::get('/mainmenu/view',[
         'uses'=>'MainMenuController@index',
         'as'=>'mainmenu.view'
     ]);
-    Route::get('/mainmenus/edit/{id}',[
+    Route::get('/mainmenu/edit/{id}',[
         'uses'=>'MainMenuController@edit',
         'as'=>'mainmenu.edit'
     ]);
     Route::post('/mainmenu/upadate/{id}',[
         'uses'=>'MainMenuController@update',
         'as'=>'mainmenu.update'
+    ]);
+    Route::get('/submenu/create',[
+        'uses'=>'SubMenuController@create',
+        'as'=>'submenu.create'
+    ]);
+    Route::post('/submenu/store/',[
+        'uses'=>'SubMenuController@store',
+        'as'=>'submenu.store'
+    ]);
+    Route::get('/submenu/view',[
+        'uses'=>'SubMenuController@index',
+        'as'=>'submenu.view'
+    ]);
+    Route::get('/submenu/edit/{id}',[
+        'uses'=>'SubMenuController@edit',
+        'as'=>'submenu.edit'
+    ]);
+    Route::post('/submenu/upadate/{id}',[
+        'uses'=>'SubMenuController@update',
+        'as'=>'submenu.update'
     ]);
 });
 

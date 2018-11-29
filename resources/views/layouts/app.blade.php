@@ -100,8 +100,8 @@
                         <li class="list-group-item">
                             <strong><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">SubMenus</a>
                             <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{route('submenus.create')}}">Create</a>
-                              <a class="dropdown-item" href="#">View</a>
+                            <a class="dropdown-item" href="{{route('submenu.create')}}">Create</a>
+                            <a class="dropdown-item" href="{{route('submenu.view')}}">View</a>
                               <div role="separator" class="dropdown-divider"></div>
                               <a class="dropdown-item" href="#">....</a>
                             </div>
