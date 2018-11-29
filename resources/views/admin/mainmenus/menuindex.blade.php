@@ -48,7 +48,7 @@
 
         @else
         <tr>
-          <th class="text-center" colspan="5"> No any Menus yet..</th>
+          <th class="text-center" colspan="5"> <span class="badge badge-info">Aww!!No any Menus yet!!!</span></th>
         </tr>
 
           @endif
