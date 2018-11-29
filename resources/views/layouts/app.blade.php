@@ -90,7 +90,7 @@
                             <strong><a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menus</a>
                             <div class="dropdown-menu">
                             <a class="dropdown-item" href="{{route('mainmenu.create')}}">Create</a>
-                              <a class="dropdown-item" href="#">View</a>
+                            <a class="dropdown-item" href="{{route('mainmenu.view')}}">View</a>
                               <div role="separator" class="dropdown-divider"></div>
                               <a class="dropdown-item" href="#">....</a>
                             </div>

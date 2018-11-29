@@ -15,6 +15,8 @@ class MainMenuController extends Controller
      */
     public function index()
     {
+        return view('admin.mainmenus.menuindex')->with('mainmenus',MainMenu::all());
+        
     }
 
     /**
@@ -51,7 +53,7 @@ class MainMenuController extends Controller
 
         Session::flash('success','You have successfully created Main Menus');
 
-        // return redirect()->route('categories');
+        return redirect()->route('mainmenu.view');
         return redirect()->back();
     }
 
@@ -74,7 +76,9 @@ class MainMenuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mainmenu = MainMenu::find($id);
+        //dd($category);
+        return view('admin.mainmenus.edit')->with('mainmenu',$mainmenu);
     }
 
     /**
@@ -86,7 +90,17 @@ class MainMenuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request->all());
+        $mainmenu = MainMenu::find($id);
+
+      $mainmenu->name = $request->main_menu_name;
+      $mainmenu->status = $request->status;
+        // dd($mainmenu->name);
+      $mainmenu->save();
+
+      Session::flash('success','You have successfully edited category');
+
+      return redirect()->route('mainmenu.view');
     }
 
     /**

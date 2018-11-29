@@ -38,5 +38,17 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
         'uses'=>'MainMenuController@store',
         'as'=>'mainmenu.store'
     ]);
+    Route::get('/mainmenus/view',[
+        'uses'=>'MainMenuController@index',
+        'as'=>'mainmenu.view'
+    ]);
+    Route::get('/mainmenus/edit/{id}',[
+        'uses'=>'MainMenuController@edit',
+        'as'=>'mainmenu.edit'
+    ]);
+    Route::post('/mainmenu/upadate/{id}',[
+        'uses'=>'MainMenuController@update',
+        'as'=>'mainmenu.update'
+    ]);
 });
 
