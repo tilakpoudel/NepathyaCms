@@ -66,5 +66,9 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
         'uses'=>'SubMenuController@update',
         'as'=>'submenu.update'
     ]);
+    // Route::get('/test/create',[
+    //     'uses'=>'TestController@create',
+    //     'as'=>'test.create'
+    // ]);
 });
 
